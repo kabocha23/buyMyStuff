@@ -5,6 +5,7 @@
 
 # testing
 /coverage
+/postman_collection
 
 # production
 /build
