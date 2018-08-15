@@ -1,0 +1,45 @@
+{
+  "name": "buy-my-stuff",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "chai": "*",
+    "cloudinary": "^1.11.0",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mocha": "*",
+    "mongoose": "^5.2.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-icons": "^2.2.7",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "now-start": "node server/index.js",
+    "deploy": "now --public --dotenv=.env.prod -d"
+  },
+  "main": "server/",
+  "proxy": {
+    "/auth/calback": {
+      "target": "http://localhost:4000"
+    },
+    "/api": {
+      "target": "http://localhost:4000"
+    }
+  },
+  "now": {
+    "alias": "buy-my-stuff"
+  }
+}
