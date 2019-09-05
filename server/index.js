@@ -1,5 +1,4 @@
 require('dotenv').config({path: '../.env'});
-
 const bodyParser = require("body-parser");
 const session = require('express-session');
 const cors = require('cors');
@@ -13,9 +12,9 @@ const cloudinaryController = require('./controllers/cloudinary_controller');
 const userController = require('./controllers/user_controller');
 const productsController = require('./controllers/products_controller');
 
-
+console.log(process.env.MONGODB_URI);
 mongoose.connect(
-  process.env.MONGO_URL, 
+  process.env.MONGODB_URI, 
   { useNewUrlParser: true }, 
   (err) => {
     if(err) {

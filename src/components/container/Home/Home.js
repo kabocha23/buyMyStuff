@@ -21,7 +21,9 @@ export default class Home extends Component {
         products: res.data, 
         loading: false
       });
-    }).catch(err => console.log("Could not fetch products during mount", err));
+    }).catch(err => 
+      console.log("Could not fetch products during mount", err)
+    );
   }
 
   

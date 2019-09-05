@@ -20,12 +20,12 @@ module.exports = {
     }).then(accessTokenResponse => {
       const accessToken = accessTokenResponse.data.access_token;
       console.log(accessToken)
+
       return axios.get(`https://${process.env.REACT_APP_AUTH0_DOMAIN}/userinfo?access_token=${accessToken}`).then(userDataResponse => {
         const { name, nickname, email, picture, sub } = userDataResponse.data;
         console.log('user data', userDataResponse.data);
         User.findOne({auth0_id: sub}, (err, user) => {
           if(err) console.log('Login Error', err);
-
           if(!user) { 
             let newUser = new User({
               name: name,

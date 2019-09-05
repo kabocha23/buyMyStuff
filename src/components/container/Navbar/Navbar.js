@@ -25,18 +25,19 @@ class Navbar extends Component {
   }
 
    render() {
-    console.log(this.props.user);
+    const { user } = this.props;
+    console.log(user);
     return (
       <div className='nav container'>
         <div className='desktop-nav'>
           <p className="nav-link" onClick={() => this.linkFunc('/')}>Home</p>
           <p className="nav-link" onClick={() => this.linkFunc('/about')}>About</p>
           <p className="nav-link" onClick={() => this.linkFunc('/cart')}>Cart</p>
-          <div className="nav-link" onClick={() => this.props.user ? this.logout() : this.login()} >
-            {this.props.user ? 
+          <div className="nav-link" onClick={() => user ? this.logout() : this.login()} >
+            {user ? 
             <div>
               <p>Logout</p> 
-              <img className='user-image' src={this.props.user.profile_picture} alt={this.props.user.nickname} />
+              <img className='user-image' src={ this.props.user.profile_picture } alt={ this.props.user.nickname } />
             </div>
             : <p>Login</p>}
           </div>

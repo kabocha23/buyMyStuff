@@ -13,7 +13,7 @@ class App extends Component {
     axios.get('/api/user-data')
     .then(res => {
       const { dispatch } = this.props;
-      if(res.data.suser) {
+      if(res.data.user) {
         dispatch(login(res.data.user));
       } else {
         dispatch(logout());
